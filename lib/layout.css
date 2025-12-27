@@ -1,0 +1,482 @@
+@charset "UTF-8";
+
+/* 그누보드5 관련 CSS START */
+
+.sound_only{
+    display: none;
+}
+
+.fa-classic:before,
+.fa-regular:before,
+.fa-solid:before,
+.fa:before,
+.fas:before{
+/*    font-family: "Font Awesome 6 Free" !important;*/
+    margin-right: 4px;
+}
+
+.fa-solid:before,
+.fas:before {
+    font-weight: 900 !important;
+}
+
+
+
+/* 그누보드5 관련 CSS END */
+
+fieldset{
+    display: inline-block;
+    padding: 1vw;
+    line-height: 48px;
+    border: 1px solid var(--main-b010-color);
+    width: 100%;
+}
+fieldset legend{
+    color: var(--main-black-color);
+    opacity: .6;
+    padding: 0px 8px;
+}
+
+
+main .section{
+    padding: 40px 0px 60px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+main .section[tab]{ display: none; }
+main .section[tab].active{ display: block; }
+
+
+main .section.left,
+main .section.right,
+main .section.up{
+    opacity: 0;
+    transform: translateY(60px);
+    transition: all .5s 0s;
+}
+
+main .section.left{
+    transform: translateX(-60px);
+}
+
+main .section.right{
+    transform: translateX(60px);
+}
+
+main .section.view{
+    opacity: 1;
+    transform: none;
+}
+
+
+main .section .wrap > .title{
+    margin-bottom: 40px;
+    text-align: left;
+}
+main .section .wrap > .title .name{
+    font-size: 2rem;
+    font-weight: bold;
+    color:var(--main-black-color);
+}
+main .section .wrap > .title .sub{
+    color:var(--main-sub-color); 
+}
+
+
+
+footer{
+    padding: 40px 0px 100px;
+    margin-top: 60px;
+}
+
+
+.radio,
+.checkbox{
+    display: inline-block;
+    position: relative;
+    margin: 0px 4px;
+    width: 24px;
+    height: 24px;
+    line-height: normal;
+}
+
+html[theme="white"] .radio.invert,
+html[theme="white"] .checkbox.invert{
+    filter: invert(1);
+}
+
+
+.radio input,
+.checkbox input{
+    display: none;
+}
+
+
+.radio:before,
+.checkbox:before,
+.radio:after,
+.checkbox:after{
+    content: "";
+    display: inline-block;
+    transition: all .5s 0s;
+    border: 1px solid var(--main-black-color);
+}
+
+
+.radio:before,
+.checkbox:before{
+    width: 100%;
+    height: 100%;
+    border-radius: 2px;
+}
+
+.radio:after,
+.checkbox:after{
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 2px;
+}
+
+
+
+.radio,
+.radio:before,
+.radio:after{
+    border-radius: 100%;
+}
+
+.radio:has(input[type="radio"]:checked):after,
+.checkbox:has(input[type="checkbox"]:checked):after{
+    background-color: var(--main-black-color);
+}
+
+
+
+
+select,
+html[theme='white'] select{
+    background-color: transparent;
+    line-height: 40px;
+    padding: 10px 0px;
+    padding-left: 5px;
+    padding-right: 10px;
+    text-align: left;
+}
+
+html[theme='black'] select{
+    filter: invert(1);
+}
+
+
+
+
+table{
+    display: inline-table;
+    border-collapse: collapse;
+    table-layout: fixed;
+    color: var(--main-black-color);
+    width: 100%;
+    overflow: hidden;
+}
+
+
+table tr th,
+table tr td{
+    cursor: pointer;
+    line-height: 36px;
+    transition: all .3s 0s;
+}
+
+table tr th{
+    line-height: 50px;
+}
+
+table tr td{
+    opacity: .6;
+}
+
+table tr:hover td{
+    opacity: 1;
+}
+
+table thead tr{
+    background-color: var(--table-th-color);
+    color:#ededed;
+}
+table thead tr th{}
+
+table tbody tr{
+    border-bottom: 1px dashed var(--table-t02-color);
+}
+
+table tbody tr td{
+    padding: 4px 0px;
+}
+
+
+table tbody tr:last-child{
+    border-bottom: 0px;
+}
+
+/* colspan 을 알수 없을 때 */
+table tr[data-colspan-max] {
+    position: relative;
+    width: 100%;
+    height: 100px;
+}
+table tr[data-colspan-max] td{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+
+
+
+
+button,
+*[button]{
+    display: inline-block;
+    
+    font-family: inherit;
+    font-weight: inherit;
+    font-size: 14px;
+    
+    line-height: 40px;
+    padding: 0px 10px;
+    margin: 0px 2px;
+    
+    color: var(--main-black-color);
+    border: 1px solid var(--main-black-color);
+    background-color: transparent;
+    
+    overflow: hidden;
+    position: relative;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.radio[button],
+.checkbox[button]{
+    width: auto;
+    height: auto;
+    border-radius: 0px;
+    border-radius: 40px;
+    padding: 0px 20px;
+}
+
+
+
+
+*[button] > i{
+    vertical-align: baseline;
+}
+
+
+*[button][value]:before{
+    content: attr(value);
+    margin-right: 4px;
+}
+
+*[button="full"],
+*[button="skew"],
+*[button="up"],
+*[button="left"],
+*[button="right"],
+*[button="down"]{
+    color: var(--main-black-color);
+    transition: all .5s 0s;
+}
+
+
+
+*[button]:after,
+*[button]:before,
+*[button="full"]:after,
+*[button="fade"]:after,
+*[button="skew"]:after,
+*[button="up"]:after,
+*[button="left"]:after,
+*[button="right"]:after,
+*[button="down"]:after{
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: var(--main-black-color);
+    z-index: -1;
+    transition: all .5s 0s;
+    transform: none;
+    border-radius: 0px;
+    border: none;
+}
+
+
+*[button]:after{ transform: translateX(-110%); }
+*[button]:before{ transform: translateX(-110%); }
+*[button="up"]:after{ transform: translateY(110%); }
+*[button="left"]:after{ transform: translateX(-110%); }
+*[button="right"]:after{ transform: translateX(110%); }
+*[button="down"]:after{ transform: translateY(-110%); }
+
+
+
+
+
+
+
+*[button="fade"]:hover,
+*[button="skew"]:hover,
+*[button="up"]:hover,
+*[button="left"]:hover,
+*[button="right"]:hover,
+*[button="down"]:hover{
+    color: var(--main-white-color);
+}
+
+*[button="up"]:hover:after,
+*[button="left"]:hover:after,
+*[button="right"]:hover:after,
+*[button="down"]:hover:after{
+    transform: none;
+}
+
+
+.radio[button]:has(input[type="radio"]:checked),
+.checkbox[button]:has(input[type="checkbox"]:checked){
+    color: var(--main-white-color);
+}
+
+.radio[button]:has(input[type="radio"]:checked):after,
+.checkbox[button]:has(input[type="checkbox"]:checked):after{
+    transform: none;
+    left: 0%;
+    right: 0%;
+}
+
+
+
+*[button="skew"]{}
+
+*[button="skew"]:after{
+    width: 200%;
+    left: 50%;
+    transform: translateX(-50%) skewX(-45deg) translateX(-100%);
+}
+
+
+*[button="skew"]:hover:after{
+    transform: translateX(-50%) skewX(-45deg);
+}
+
+
+*[button="skew"][right]:after{
+    transform: translateX(-50%) skewX(45deg) translateX(100%);
+}
+
+*[button="skew"][right]:hover:after{
+    transform: translateX(-50%) skewX(45deg);
+}
+
+
+
+*[button][blur]{
+    opacity: .6;
+}
+
+*[button][blur]:hover{
+    opacity: 1;
+}
+
+*[button="full"]{
+    color: var(--main-white-color);
+    border: 0px;
+}
+*[button="full"]:after{
+    transform: translate(0px);
+}
+
+
+*[button="fold"][value],
+*[button="fold"][value]:hover{
+    color:var(--main-black-color);
+}
+
+*[button="fold"][value]:before,
+*[button="fold"][value]:hover:before{
+    content: none;
+}
+
+*[button="fold"][value]:after,
+*[button="fold"][value][left]:after,
+*[button="fold"][value][right]:before{
+    content: attr(value);
+    margin: 0px;
+    position: static;
+    display: inline-block;
+    width: auto;
+    height: auto;
+    color: var(--main-black-color);
+    transform: none;
+    overflow: clip;
+    white-space: nowrap;
+    max-width: 0px;
+    transition: all .5s 0s;
+    background-color: transparent;
+}
+
+
+*[button="fold"][value][right]:after{
+    content: none;
+}
+
+
+*[button="fold"][value]:hover:after,
+*[button="fold"][value][left]:hover:after,
+*[button="fold"][value][right]:hover:before{
+    color: var(--main-black-color);
+    transform: none;
+    max-width: 200px;
+    transition: all 1s 0s;
+}
+
+
+.radio[button="fold"]:has(input[type="radio"]:checked),
+.checkbox[button="fold"]:has(input[type="checkbox"]:checked){
+    color: var(--main-white-color);
+    background-color: var(--main-black-color);
+}
+
+
+.radio[button="fold"]:has(input[type="radio"]:checked):after,
+.checkbox[button="fold"]:has(input[type="checkbox"]:checked):after,
+.radio[button="fold"]:has(input[type="radio"]:checked):before,
+.checkbox[button="fold"]:has(input[type="checkbox"]:checked):before{
+    color: var(--main-white-color);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

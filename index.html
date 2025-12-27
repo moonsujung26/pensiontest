@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>펜션 연습</title>
+    <link rel="stylesheet" href="./lib/setup.css">
+    <link rel="stylesheet" href="./lib/layout.css">
+
+    <!-- swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
+    <script src="./lib/jquery.js"></script>
+
+    <style>
+        /*
+        html {
+            background-color: #222;
+        }
+*/
+
+        header {
+            background-color: #fff1;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            z-index: 99;
+            padding: 20px 0px;
+        }
+
+        header .left {}
+
+        header .left #logo {}
+
+        header .left #logo h1 {
+            font-size: 0px;
+            background-image: url(./img/logo.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 220px;
+            width: 220px;
+            height: 40px;
+        }
+
+        header .left #menu {
+            display: inline-block;
+        }
+
+        header .left #menu ul {}
+
+        header .left #menu ul li {}
+
+        header .left #menu ul li a {
+            padding: 0px 6px;
+            line-height: 40px;
+            color: #fff;
+        }
+
+
+        header .right {}
+
+        header .right .util {}
+
+        header .right .util li {
+            padding: 0px 4px;
+        }
+
+        header .right .util li a img {
+            width: 28px;
+            height: 28px;
+        }
+
+
+        header .right .x1200 {}
+
+        header .right .x1200 .button {
+            position: relative;
+            border: 1px solid #fff;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+
+        }
+
+        header .right .x1200 .button span:nth-child(1) {
+            transform: translate(-50%, -50%) translateY(-6px);
+        }
+
+        header .right .x1200 .button span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            width: 20px;
+            height: 2px;
+            background-color: #fff;
+        }
+
+        header .right .x1200 .button span:nth-child(3) {
+            transform: translate(-50%, -50%) translateY(6px);
+        }
+
+        header .right .x1200 .menuBox {}
+
+        header .right .x1200 .menuBg {}
+
+
+        main {}
+
+        main .section {}
+
+
+
+        main #page01 {
+            padding: 0px;
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        main #page01 .swiper{
+            height: 100%;
+        }
+
+        main #page01 .swiper-slide {
+            position: relative;
+            width: 100%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        main #page01 .swiper-slide.p1 {
+            background-image: url(./img/index_page01_bg01.png);
+        }
+
+        main #page01 .swiper-slide.p2 {
+            background-image: url(./img/index_page01_bg01.png);
+        }
+
+        main #page01 .swiper-slide .title {
+            position: absolute;
+            top: 50%;
+            left: 0%;
+            transform: translateY(-50%);
+            width: 100%;
+        }
+
+        main #page01 .swiper-slide .title .wrap {
+            text-align: left;
+        }
+
+
+        main #page01 .swiper-slide .title .name {
+            color: #fff;
+            font-size: 50px;
+            font-weight: bold;
+        }
+
+        main #page01 .swiper-slide .title .sub {
+            font-size: 14px;
+            color: #fff;
+            margin-bottom: 25px;
+
+        }
+
+        main #page01 .swiper-slide .title .button {
+
+            color: #000;
+            border-color: #fff;
+            border-radius: 6px;
+            background-color: #fff;
+
+            line-height: inherit;
+            padding: 6px 20px;
+        }
+
+
+
+
+
+
+
+
+
+
+        main #page02 {
+            background-color: #B29C7E;
+        }
+
+        main #page02 .wrap {
+            position: relative;
+        }
+
+        main #page02 .wrap .grid {
+            position: relative;
+            transform: translateY(-25%);
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap: 10px;
+            z-index: 999;
+        }
+
+        main #page02 .wrap .grid li {
+            position: relative;
+            background-color: #fff;
+            border-radius: 6px;
+            height: 100%;
+        }
+
+        main #page02 .wrap .grid li a {
+            padding: 20px;
+            height: 100%;
+        }
+
+        main #page02 .wrap .grid li a .title {
+            text-align: left
+        }
+
+        main #page02 .wrap .grid li a .title .name {
+            color: #000;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        main #page02 .wrap .grid li a .title .sub {
+            color: #000;
+            margin-top: 4px;
+            font-weight: bold;
+        }
+
+        main #page02 .wrap .grid li a .title img {
+            padding: 20px 0px;
+        }
+
+        main #page02 .wrap .grid li a .title .text {
+            padding-bottom: 40px;
+            font-size: 14px;
+            color: #000;
+        }
+
+        main #page02 .wrap .grid li a .title .more {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+        }
+
+
+
+
+        main #page03 {
+            height: 560px;
+        }
+
+        main #page03 .wrap .title {
+            padding: 0px 20px;
+        }
+
+        main #page03 .wrap .title .name {}
+
+        main #page03 .wrap .title .sub {
+            margin-top: 8px;
+        }
+
+        main #page03 .wrap .list {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-gap: .5vw;
+        }
+
+        main #page03 .wrap .list li {
+            position: relative;
+            overflow: hidden;
+            border-radius: 6px;
+        }
+
+        main #page03 .wrap .list li:after {
+
+            content: "";
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            z-index: 2;
+            width: 100%;
+            height: 100%;
+
+            background-color: #0006;
+        }
+
+        main #page03 .wrap .list li a {
+
+            position: relative;
+            width: 100%;
+        }
+
+        main #page03 .wrap .list li a::before {
+            content: "";
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            z-index: 3;
+            width: 100%;
+            height: 148px;
+
+            background-color: #0004;
+
+        }
+
+        main #page03 .wrap .list li a img {
+            height: 320px;
+            width: 100%;
+        }
+
+        main #page03 .wrap .list li a .title {
+            position: absolute;
+            bottom: 20px;
+            left: 0px;
+            z-index: 4;
+            text-align: left;
+        }
+
+        main #page03 .wrap .list li a .title .name {
+            font-size: 26px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        main #page03 .wrap .list li a .title .sub {
+            margin-top: 5px;
+            color: #fff;
+        }
+
+
+
+
+
+        main #page04 {
+            position: relative;
+            background-image: url(./img/index_page04_bg.jpg);
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            padding: 100px 0px;
+
+        }
+
+        main #page04:before {
+            content: "";
+            position: absolute;
+            top: 0px;
+            left: 0px;
+
+            width: 100%;
+            height: 100%;
+
+            background-color: #0007;
+
+        }
+
+        main #page04 .wrap {}
+
+        main #page04 .wrap .title {
+            position: relative;
+            z-index: 9;
+            padding: 0px 20px;
+            text-align: center;
+            margin: 0px;
+        }
+
+        main #page04 .wrap .title .name {
+            font-size: 32px;
+            color: #fff;
+        }
+
+        main #page04 .wrap .title .sub {
+            color: #fff
+        }
+
+
+        main #page05 {}
+
+        main #page05 .wrap {}
+
+        main #page05 .wrap .swiper-slide {
+
+            height: 340px;
+            position: relative;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        main #page05 .wrap .swiper-slide::after {
+            content: "";
+            position: absolute;
+            top: 0px;
+            left: 0px;
+
+            width: 100%;
+            height: 100%;
+
+            background-color: #0006;
+        }
+
+        main #page05 .wrap .swiper-slide.p1 {
+            background-image: url(./img/index_page05_img01.jpg);
+        }
+
+        main #page05 .wrap .swiper-slide.p2 {
+            background-image: url(./img/index_page05_img02.jpg);
+        }
+
+        main #page05 .wrap .swiper-slide.p3 {
+            background-image: url(./img/index_page05_img03.jpg);
+        }
+
+        main #page05 .wrap .swiper-slide.p4 {
+            background-image: url(./img/index_page05_img04.jpg);
+        }
+
+        main #page05 .wrap .swiper-slide .title {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            z-index: 2;
+            text-align: left;
+        }
+
+        main #page05 .wrap .swiper-slide .title .sub {
+            color: #fff;
+        }
+
+        main #page05 .wrap .swiper-slide .title .name {
+            color: #fff;
+
+        }
+
+        footer {
+            background-color: #121212;
+        }
+
+        footer .wrap {}
+
+
+        footer .wrap .grid {
+            grid-template-columns: 1fr 2fr 1fr;
+        }
+        
+        footer .wrap .grid .logo{}
+        footer .wrap .grid .logo img{}
+        
+        footer .wrap .grid .context{
+            text-align: left;
+            font-size: 14px;
+            font-weight: bold;
+            line-height: 2;
+            color: #fff;
+        }
+
+        footer .wrap .grid .sns{}
+        footer .wrap .grid .sns li{}
+        footer .wrap .grid .sns li a{
+            padding: 0px 5px;
+        }
+        footer .wrap .grid .sns li a img{}
+        
+        
+        
+        
+        @media all and (max-width:1200px){ 
+            
+            main #page01 {
+                height: 740px;
+            }     
+            main #page02 .wrap .grid {
+                transform: none;
+            }
+            
+            
+            
+            
+        }
+        
+        
+        @media all and (max-width:1000px){ 
+            
+            main #page01 {
+                height: 680px;
+            }
+
+        }
+        
+        @media all and (max-width:800px){ 
+            
+            main #page01 {
+                height: 640px;
+            }
+
+        }
+        
+        @media all and (max-width:600px){ 
+            
+            main #page01 {
+                height: 600px;
+            }
+
+        }
+        
+
+    </style>
+
+
+</head>
+
+<body>
+
+    <header>
+        <div class="wrap">
+            <div class="flex">
+
+                <div class="left">
+
+                    <a href="#" id="logo">
+                        <h1>blackcode</h1>
+                    </a>
+
+                    <nav id="menu" class="o1200">
+                        <ul>
+                            <li><a href="#">회사소개</a></li>
+                            <li><a href="#">지점소개</a></li>
+                            <li><a href="#">창업안내</a></li>
+                            <li><a href="#">고객지원</a></li>
+                        </ul>
+                    </nav>
+
+
+                </div>
+
+                <div class="right">
+
+                    <ul class="util o1200">
+                        <li><a href="#"><img src="./img/lang-white.svg" alt=""></a></li>
+                        <li><a href="#"><img src="./img/theme-white.svg" alt=""></a></li>
+                        <li><a href="#"><img src="./img/search-white.svg" alt=""></a></li>
+                    </ul>
+
+                    <div class="x1200">
+
+                        <div class="button">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                        <div class="menuBox"></div>
+                        <div class="menuBg"></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+
+        <section id="page01" class="section">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide p1">
+                        <div class="title">
+                            <div class="wrap">
+
+                                <div class="name">Welecom to blackcode</div>
+                                <div class="sub">
+                                    블랙코드는 바다 풍경을 보며 편안하게<br>
+                                    휴식을 취할수 있는펜션입니다.
+                                </div>
+                                <a href="#" class="button" button>예약하기</a>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide p2">
+                        <div class="title">
+                            <div class="wrap">
+
+                                <div class="name">Welecom to blackcode</div>
+                                <div class="sub">
+                                    블랙코드는 바다 풍경을 보며 편안하게<br>
+                                    휴식을 취할수 있는펜션입니다.
+                                </div>
+                                <a href="#" class="button" button>예약하기</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pagination"></div>
+            </div>
+        </section>
+        <section id="page02" class="section">
+            <div class="wrap">
+
+                <ul class="grid">
+
+                    <li>
+                        <a href="#">
+                            <div class="title">
+                                <div class="name">ROOM</div>
+                                <div class="sub">객실 오션뷰</div>
+                                <img src="./img/index_page02_img01.png" alt="" class="o1000">
+                                <div class="text">
+                                    거실에서 바라보는 아름다운 바다풍경을 보며<br>
+                                    여유로움을 즐길 수 있습니다.</div>
+                                <div class="more o1000">Read More</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="title">
+                                <div class="name">SPECIAL</div>
+                                <div class="sub">스파 / 풀 옵션</div>
+                                <img src="./img/index_page02_img02.png" alt="" class="o1000">
+                                <div class="text">
+                                    품격있는 휴식을 위해 럭셔리한 분위기 그리고 스파와<br>
+                                    수영장을 갖추고 있어 한층 기분을 즐길 수 있습니다.</div>
+                                <div class="more o1000">Read More</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="title">
+                                <div class="name">TRAVEL</div>
+                                <div class="sub">여행코스</div>
+                                <img src="./img/index_page02_img03.png" alt="" class="o1000">
+                                <div class="text">
+                                    광관지에서 가까운 넓은 펜션입니다.<br>
+                                    편안한 여행이 될 수 있도록 안내되어 있습니다.</div>
+                                <div class="more o1000">Read More</div>
+                            </div>
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </section>
+        <section id="page03" class="section">
+            <div class="wrap">
+
+                <div class="title">
+                    <div class="name">Other Services</div>
+                    <div class="sub">기타 서비스 </div>
+                </div>
+
+
+                <ul class="grid list">
+                    <li>
+                        <a href="#">
+                            <img src="./img/index_page03_img01.jpeg" alt="">
+                            <div class="title">
+                                <div class="name">바베큐</div>
+                                <div class="sub">
+                                    숯, 그릴 4인 기준 20,000원<br>
+                                    4인 초과시 10,000원 추가됩니다.</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="./img/index_page03_img02.jpeg" alt="">
+                            <div class="title">
+                                <div class="name">주차장</div>
+                                <div class="sub">
+                                    손님을 위한 넓은 주차장이 마련<br>
+                                    되어 있습니다. </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="./img/index_page03_img03.jpeg" alt="">
+                            <div class="title">
+                                <div class="name">시설 및 비품</div>
+                                <div class="sub">
+                                    와이파이, 화장대, 헤어빗, 드라이기,
+                                    커피포트, 전기밥솥 등</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="./img/index_page03_img04.jpeg" alt="">
+                            <div class="title">
+                                <div class="name">수영장"&"놀이시설</div>
+                                <div class="sub">
+                                    야외 수영장과 각종 놀이시설이<br>
+                                    준비되어 있습니다.</div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section id="page04" class="section">
+            <div class="wrap">
+                <div class="title">
+                    <div class="name">가장 편안하게 휴식할 수 있는 공간</div>
+                    <div class="sub">
+                        멀리서 석양이 지는 노을을 바라보며 편히 쉴수있는 공간을<br>
+                        제공해 드리고 있습니다. 기분 좋은 날을 만들러<br>
+                        블랙코드 펜션으로 휴양 하러 오세요.</div>
+                </div>
+            </div>
+        </section>
+        <section id="page05" class="section">
+            <div class="wrap">
+                <div class="title">
+                    <div class="name">Room Guide</div>
+                    <div class="sub">객실 안내</div>
+                </div>
+                <div class="swiper room">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide p1">
+                            <div class="title">
+                                <div class="sub">ROOM</div>
+                                <div class="name">에메랄드 룸</div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide p2">
+                            <div class="title">
+                                <div class="sub">ROOM</div>
+                                <div class="name">에메랄드 룸</div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide p3">
+                            <div class="title">
+                                <div class="sub">ROOM</div>
+                                <div class="name">에메랄드 룸</div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide p4">
+                            <div class="title">
+                                <div class="sub">ROOM</div>
+                                <div class="name">에메랄드 룸</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+    </main>
+
+    <footer>
+
+        <div class="wrap">
+
+            <div class="footer grid">
+                
+                <a href="#" class="logo">
+                    <img src="./img/logo.png" alt="">
+                </a>
+                
+                <div class="context">
+                    ADDRESS : 41, Uam-ro 85beon-gil, Gimhae-si,<br class="x1000"> Gyeongsangnam-do, Republic of Korea <br>
+                    EMAIL : admin@blackcode.kr <br class="x800">TEL : +82.8463.4788 <br>
+                    COPYRIGHT ⓒ BLACKCODE Co., LTD. ALL RIGHTS RESERVED <br>
+                    Terms of Use / Privacy Policy
+                </div>
+                
+                <ul class="sns">
+                    <li><a href="#"><img src="./img/youtube.svg" alt=""></a></li>
+                    <li><a href="#"><img src="./img/instagram.svg" alt=""></a></li>
+                    <li><a href="#"><img src="./img/mail.svg" alt=""></a></li>
+                    <li><a href="#"><img src="./img/users.svg" alt=""></a></li>
+                </ul>
+                
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+
+
+<script>
+    const P1 = new Swiper('#page01 .swiper', {
+
+        loop: true,
+
+
+    });
+
+
+    const P2 = new Swiper('#page05 .swiper', {
+
+        loop: true,
+        slidesPerView: 1,
+        centeredSlides: true,
+        spaceBetween: 10,
+        breakpoints: {
+            1200: {
+                slidesPerView: 4,
+                centeredSlides: false,
+            }
+        }
+
+    });
+
+</script>
+
+</html>
